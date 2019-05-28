@@ -15,6 +15,8 @@
 @property (nonatomic, assign) NSInteger columnNumber;
 @property (nonatomic, strong) TZAlbumModel *model;
 
+
+
 /// 整个项目主题色
 @property (nonatomic, strong) UIColor *mainColor;
 

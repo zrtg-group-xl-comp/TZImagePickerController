@@ -153,6 +153,8 @@
 
 /// 默认是NO，如果设置为YES，导出视频时会修正转向（慎重设为YES，可能导致部分安卓下拍的视频导出失败）
 @property (assign, nonatomic) BOOL needFixComposition;
+/// 是否保留原作者代码,默认不保留
+@property (nonatomic, assign) BOOL isSaveAuthor;
 
 /// The photos user have selected
 /// 用户选中过的图片数组
