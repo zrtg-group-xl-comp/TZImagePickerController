@@ -333,7 +333,7 @@
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos;
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker;
 // TS定制
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishEditVideoCoverImage:(UIImage *)coverImage videoURL:(id)videoURL;
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishEditVideoCoverImage:(UIImage *)coverImage videoURL:(id)videoURL sourceAssets:(PHAsset *)asset;
 
 // If user picking a video and allowPickingMultipleVideo is NO, this callback will be called.
 // If allowPickingMultipleVideo is YES, will call imagePickerController:didFinishPickingPhotos:sourceAssets:isSelectOriginalPhoto:

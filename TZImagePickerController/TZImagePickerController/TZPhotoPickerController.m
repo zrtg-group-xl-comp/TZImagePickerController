@@ -719,8 +719,8 @@ static CGFloat itemMargin = 5;
                                             /// 切换到主线程
                                             dispatch_sync(dispatch_get_main_queue(), ^{
                                                 [tzImagePickerVc dismissViewControllerAnimated:YES completion:^{
-                                                    if ([tzImagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:)]) {
-                                                        [tzImagePickerVc.pickerDelegate imagePickerController:tzImagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:[NSURL fileURLWithPath:exportFilePath]];
+                                                    if ([tzImagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:sourceAssets:)]) {
+                                                        [tzImagePickerVc.pickerDelegate imagePickerController:tzImagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:[NSURL fileURLWithPath:exportFilePath] sourceAssets:model.asset];
                                                     }
                                                 }];
                                             });
@@ -763,8 +763,8 @@ static CGFloat itemMargin = 5;
                         editVC.coverImageBlock = ^(UIImage *coverImage, NSURL *videoPath) {
                             [imagePickerVc dismissViewControllerAnimated:YES completion:^{
                                 if (coverImage != nil && videoPath != nil) {
-                                    if ([imagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:)]) {
-                                        [imagePickerVc.pickerDelegate imagePickerController:imagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:videoPath];
+                                    if ([imagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:sourceAssets:)]) {
+                                        [imagePickerVc.pickerDelegate imagePickerController:imagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:videoPath sourceAssets:model.asset];
                                     }
                                     /// 导航内视图全部pop以释放内存
                                     for (int i = 0; i < weakSelf.navigationController.viewControllers.count; i ++) {
@@ -802,8 +802,8 @@ static CGFloat itemMargin = 5;
                     editVC.coverImageBlock = ^(UIImage *coverImage, NSURL *videoPath) {
                         [imagePickerVc dismissViewControllerAnimated:YES completion:^{
                             if (coverImage != nil && videoPath != nil) {
-                                if ([imagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:)]) {
-                                    [imagePickerVc.pickerDelegate imagePickerController:imagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:videoPath];
+                                if ([imagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishEditVideoCoverImage:videoURL:sourceAssets:)]) {
+                                    [imagePickerVc.pickerDelegate imagePickerController:imagePickerVc didFinishEditVideoCoverImage:coverImage videoURL:videoPath sourceAssets:model.asset];
                                 }
                                 /// 导航内视图全部pop以释放内存
                                 for (int i = 0; i < weakSelf.navigationController.viewControllers.count; i ++) {

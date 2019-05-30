@@ -858,9 +858,9 @@
 - (void)setAllowPickingVideo:(BOOL)allowPickingVideo {
     _allowPickingVideo = allowPickingVideo;
     [TZImagePickerConfig sharedInstance].allowPickingVideo = allowPickingVideo;
-    if (!allowPickingVideo) {
-        _allowTakeVideo = NO;
-    }
+//    if (!allowPickingVideo) {
+//        _allowTakeVideo = NO;
+//    }
 }
 
 - (void)setPreferredLanguage:(NSString *)preferredLanguage {
