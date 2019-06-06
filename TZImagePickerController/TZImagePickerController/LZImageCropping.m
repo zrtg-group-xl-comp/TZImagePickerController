@@ -416,7 +416,9 @@
         [_sureButton setTitle:@"完成" forState:UIControlStateNormal];
         [_sureButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [_sureButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [_sureButton setTitleColor:[UIColor colorWithRed:89 / 256.0 green:182 / 256.0 blue:215 / 256.0 alpha:1] forState:UIControlStateNormal];
+        //0xE60012
+        [_sureButton setTitleColor:[UIColor colorWithRed:230 / 256.0 green:0 / 256.0 blue:18 / 256.0 alpha:1]
+                          forState:UIControlStateNormal];
         [_sureButton addTarget:self action:@selector(sureButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sureButton;
