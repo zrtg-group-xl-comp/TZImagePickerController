@@ -581,7 +581,12 @@
 
 - (void)setPhotoSelImageName:(NSString *)photoSelImageName {
     _photoSelImageName = photoSelImageName;
-    _photoSelImage = [UIImage tz_imageNamedFromMyBundle:photoSelImageName];
+    UIImage *image = [UIImage imageNamed:@"report_selected"];
+    if (image != nil) {
+        _photoSelImage = image;
+    } else {
+        _photoSelImage = [UIImage tz_imageNamedFromMyBundle:photoSelImageName];
+    }
 }
 
 - (void)setPhotoDefImageName:(NSString *)photoDefImageName {

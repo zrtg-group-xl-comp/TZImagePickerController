@@ -158,7 +158,12 @@
     if (_tzImagePickerVc.previewSelectBtnSelImage) {
         [_selectButton setImage:_tzImagePickerVc.previewSelectBtnSelImage forState:UIControlStateSelected];
     } else {
-        [_selectButton setImage:[UIImage tz_imageNamedFromMyBundle:_tzImagePickerVc.photoPreviewSelImageName] forState:UIControlStateSelected];
+        UIImage *image = [UIImage imageNamed:@"report_selected"];
+        if (image != nil) {
+            [_selectButton setImage:image forState:UIControlStateSelected];
+        } else {
+            [_selectButton setImage:[UIImage tz_imageNamedFromMyBundle:_tzImagePickerVc.photoPreviewSelImageName] forState:UIControlStateSelected];
+        }
     }
     [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
     _selectButton.hidden = !_tzImagePickerVc.showSelectBtn;
